@@ -1,0 +1,77 @@
+
+
+
+<!DOCTYPE html>
+  
+<html lang="sk">
+  <head>
+    <meta name="description" content="Moja stránka o bakalárskej práci" />
+    <meta name="keywords" content="bc, bakalárska práca, webová aplikácia, matematika, riešenie úloh" />
+    <meta name="author" content="Nina Klačková" />
+    <meta charset="utf-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link type="image/x-icon" href="{{ url_for('static', filename='/images/maths.ico') }}" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/general.css') }}">
+
+    <title>Úvod</title>
+  </head>
+  <body>
+    <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"> </script>
+    <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                        <img src="{{ url_for('static', filename='/images/maths.jpeg') }}" class="logo-image img-fluid" alt="math logo">
+                    </a>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-auto">
+                            <li class="nav-item"><a class="nav-link active" href="index.html">Domov</a></li>
+                            <li class="nav-item"><a class="nav-link" href="teoria.html">Teória</a></li>
+                            <li class="nav-item"><a class="nav-link" href="navod.html">Návod</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ulohy.html">Úlohy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ihrisko.html">Ihrisko</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    
+    <main>
+      <br>
+      <h1>Vitajte </h1>
+        <h1> v <b>Interaktívnej zbierke úloh z matematiky,</b> </h1>
+    
+      
+        <div class="maintext">
+          <h3> v ktorej si môžete vyskúšať riešiť príklady z oblasti algebry! </h3>
+          <p>Vyberte si:</p>
+            <ul>
+              <li style="margin-right: 160px;"> <a href="teoria.html">Teória</a> - zopakujte si základy algebry.</li>
+              <li style="margin-right: 210px;"> <a href="navod.html">Návod</a> ako sa ovláda aplikácia.</li>
+              <li style="margin-right: 180px;"> <a href="ulohy.html">Úlohy</a> pripravené na vaše riešenie.</li>
+              <li style="margin-left: 90px;"> <a href="ihrisko.html">Ihrisko</a> - vyskúšajte si aplikáciu a jej funkcie na vlastných príkladoch.</li>
+            </ul>
+        <br>
+      
+        <h3>Veľa šťastia!</h3>
+        <br><br>
+        </div>
+    </main>
+    <footer class="indexn">
+      <div class="footer1">Túto aplikáciu vytvorila Nina Klačková ako bakalársku prácu</div>
+      <div class="footer2">Fakulta matematiky, fyziky a informatiky, UK</div>
+      <div class="footer1">Email: klackova7@uniba.sk</div>
+    </footer>
+</body>
+</html>

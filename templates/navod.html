@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta name="description" content="Moja stránka o bakalárskej práci" />
+    <meta name="keywords" content="bc, bakalárska práca, webová aplikácia, matematika, riešenie úloh" />
+    <meta name="author" content="Nina Klačková" />
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link type="image/x-icon" href="images/maths.ico" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="{{ url_for('static', filename='/images/maths.ico') }}" rel="shortcut icon" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/general.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/theoryInstruction.css') }}">
+
+    <title>Návod</title>
+</head>
+<body>
+    <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"></script>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand me-lg-5 me-0" href="index.html">
+          <img src="{{ url_for('static', filename='/images/maths.jpeg') }}" class="logo-image img-fluid" alt="math logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-lg-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Domov</a></li>
+            <li class="nav-item"><a class="nav-link" href="teoria.html">Teória</a></li>
+            <li class="nav-item"><a class="nav-link active" href="navod.html">Návod</a></li>
+            <li class="nav-item"><a class="nav-link" href="ulohy.html">Úlohy</a></li>
+            <li class="nav-item"><a class="nav-link" href="ihrisko.html">Ihrisko</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="unique-container">
+        <div class="unique-content">
+          <div class="row" id="navod"><h2><b>Návod</b></h2></div>
+          <div class="row">
+            <div class="col">
+                Táto aplikácia slúži na počítanie príkladov z matematiky. Poskytuje pomocné operácie, ktorými sa užívateľ vie dopracovať k správnemu riešeniu.
+                <br> Takisto obsahuje Ihrisko, kde užívateľ môže experimentovať a riešiť vlastné zadania rovníc. Ihrisko poskytuje riešenie až 4 rovníc súčasne.
+                <br><br>
+                    <li>Rovnice aj výrazy sa zapisujú v štandardnom tvare.</li>
+                    <li>Pri násobení musia obsahovať hviezdičku medzi číslicou a písmenom (4*x). </li>
+                    <li>Každá rovnica musí obsahovať rovná sa (=).</li>
+                    <li>Pri sústave rovníc oddelíme rovnice od seba enterom.</li>
+                    <li>Mocniteľ vieme napísať buď spôsobom x^2 alebo x**2. Záporný mocniteľ píšeme do zátvorky, napríklad x^(-1).</li>
+                    <li>Odmocninu &radic;x vieme zapísať ako x^(1/2) alebo x**(1/2).</li>
+                    <li>Výrazy v rovniciach sú rozdelené na členy, ktoré oddeľujú znamienka plus(+) a mínus(-).</li>
+                    <li>Desatinné čísla zapisujeme s bodkou (.).</li>
+                    <li>Vysvetlenie teórie pomocných operácií je v časti <a href="teoria.html" style="color: black;">Teória</a></li>
+                    <li>Do odpoveďového formulára zapisuj výsledok vždy v základnom tvare a v tvare zlomku (nie desatinné číslo).</li>
+                <hr>
+                <b>Úlohy obsahujú dva typy zadaní: </b>
+                <li>S pevným zadaním - rovnicou, tieto úlohy sú pripravené ihneď na riešenie.</li>
+                <li>S voľným, slovným zadaním, kde si užívateľ zadanie musí najskôr správne zapísať, aby mohol začať úlohu riešiť.
+                <hr><br>Pokiaľ užívateľ má napisanú rovnicu, s ktorou pracuje a napíše ďalšiu novú, ktorú potvrdí, história predchádzajúcich výpočtov ostane a príklad sa pridá pod ňu. Pokiaľ chceme celú históriu vymazať, slúži na to tlačidlo kôš(viac o zápise v časti návodu-Ihrisko).
+                <hr>
+                <b>Úlohy majú dva typy odpoveďového formulára: </b>
+                <li> Kde niekedy môže záležať na poradí odpovedí. </li>
+                <li> Kde nezáleží na poradí odpovedí (napríklad pri koreňoch rovnice) </li>
+            <hr> Pri používaní pomocných úprav sa upravený výraz zobrazí na začiatku rovnice a upravená rovnica sa zobrazí na začiatku sústavy.
+            </div>
+           </div>
+
+          <hr>
+          <div class="row" id="vseobecne"><h3>Všeobecné</h3></div>
+          <div class="row">
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-arrow-90deg-left" title="vrátiť späť" id="undo_button"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>vrátiť späť</b></h4>
+            </div>
+            <div class="col-8">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa vymaže posledný vykonaný krok.
+            </div>
+            <hr>
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-trash" title="zmazať všetko" id="clear_button"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>zmazať všetko</b></h4>
+            </div>
+            <div class="col-8">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa vymažú všetky kroky riešenia okrem zadania. V Ihrisku sa vymaže aj vlastné zadanie.
+            </div>
+            <hr>
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-calculator" title="kalkulačka" id="calculator"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>kalkulačka</b></h4>
+            </div>
+            <div class="col-8">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa zobrazí kalkulačka. Slúži na pomocné výpočty. Kalkulačka sa zavrie kliknutím na obrazovku mimo nej.
+            </div>
+            <hr>
+            Kliknutím na pomocnú operáciu sa zobrazí vyskakovacie okno s krátkym opisom čo robí a ako sa používa.
+            <br><b>Pomocné operácie => typy vyskakovacích okien:</b>
+            <li> pokiaľ okno neobsahuje pole, kliknite na členy, v ktorých chcete danú operáciu využiť</li>
+            <li>pokiaľ okno obsahuje aj pole, kliknite na členy a následne do poľa napíšte vami požadovanú hodnotu (čo chcete vyňať pred zátvorku, substitúciu a podobne).</li>
+            <li>pokiaľ okno obsahuje dve polia, pracujete s celou rovnicou a na členy nie je potrebné klikať. Do polí len napíšte požadované hodnoty.</li>
+            <br><br><hr>
+            <br><b>Príklad:</b>
+            <br>Máme rovnicu. Rozhodneme sa, že chceme z rovnice vyňať číslo, tak klikneme na funkciu.
+            <div class="row">
+                <img src="{{ url_for('static', filename='/images/postup1.png') }}">
+            </div>
+            Zobrazí sa nám vyskakovacie okno. (Vyskakovacie okno vieme posúvať po obrazovke pokiaľ nám prekáža.) Na rovnici klikneme na členy, v ktorých chceme funkciu využiť a do poľa napíšeme čo chceme vyňať z jednotlivých členov. V okne sa nám vypíšu členy, na ktoré sme klikli. Pokiaľ sme sa pomýlili, stačí člen iba odkliknúť naspäť.
+            <div class="row">
+                <img src="{{ url_for('static', filename='/images/postup2.png') }}">
+            </div>
+            Nakoniec už stačí stlačiť iba tlačidlo "Potvrdiť" a zobrazí sa nám požadovaný výsledok. Pokiaľ sa funkcia nedá vykonať, upozorní na to a operáciu nevykoná.
+
+        </div>
+
+          <hr>
+          <div class="row" id="ulohy"><h3>Úlohy</h3></div>
+          <div class="row">
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-lightbulb" type="button" title="zobraz riešenie" data-bs-toggle="modal" data-bs-target="#carouselPopup" id="exercise_hint"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>zobraz riešenie</b></h4>
+            </div>
+            <div class="col-8">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa zobrazia kroky jedného z možných riešení. Medzi krokmi sa posúva šípkami.
+            </div>
+            <hr>
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-arrow-left" title="predchádzajúca úloha" id="prevButton"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>predchádzajúca úloha</b></h4>
+            </div>
+            <div class="col-8">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa presuniete na predchádzajúcu úlohu.
+            </div>
+            <hr>
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-arrow-right" title="nasledujúca úloha" id="nextButton"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>nasledujúca úloha</b></h4>
+            </div>
+            <div class="col-8">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa presuniete na nasledujúcu úlohu.
+            </div>
+            <hr>
+
+            <div class="col-2">
+                <button class="btn btn-primary large-button bi bi-list" type="button" title="zoznam úloh" id="openModalExerciseButton" data-bs-content="Obsah okna s textom"></button>
+            </div>
+            <div class="col-2">
+                <h4><b>zoznam úloh</b></h4>
+            </div>
+            <div class="col-7">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa zobrazí zoznam úloh s informáciou o stave úlohy (vyriešená = zelená farba, nevyriešená = červená farba).
+            </div>
+            <hr>
+
+            <div class="col-2">
+                <button type="button" id="answer_button" class="btn btn-primary large-button btn-block">Odpoveď </button>
+            </div>
+            <div class="col-2">
+                <h4><b>Odpoveď</b></h4>
+            </div>
+            <div class="col-7">
+                &nbsp;&nbsp;Kliknutím na tlačidlo sa zobrazí odpoveďový formulár.
+            </div>
+            <hr>
+
+
+
+          </div>
+          <hr>
+          <div class="row" id="ihrisko"><h3>Ihrisko</h3></div>
+          <div class="row">
+            V Ihrisku si môžeme zapísať vlastnú rovnicu alebo sústavu rovníc (najviac 4 rovníc). Rovnice oddelíme od seba enterom. Následne môžeš experimentovať a riešiť príklad použitím všetkých pomocných operácií v aplikácií. Ihrisko neposkytuje na kontrolu správny výsledok.
+            V Ihrisku sú rovnaké pravidlá zápisu ako v úlohách. (napríklad napíšeme 5*x+10*x+18=0 a po stlačení tlačidla "Potvrdiť" môžeme začať riešiť)
+            <div class="col">
+                </div>
+          </div>
+
+          <hr>
+          <div class="row" id="pomocne_operacie"><h3>Pomocné operácia</h3></div>
+          <div class="row"><u>Substitúcia a dosadenie</u></div>
+            <div class="row">
+            <div class="col">
+                <b>Substitúcia</b> slúži iba na úpravu rovnice. V rovnici 2*(x+1)<sup>2</sup>+8*(x+1)=0 môžeme výraz (x+1) nahradiť nejakou inou premennou, napríklad (x+1)=a . Dostaneme 2*a<sup>2</sup>+8*a=0
+                <br> Substituovať môžem vždy iba za premennú (nie výraz).
+                <br> <br>Operáciu <b>dosaď</b> využívam pokiaľ:
+                <br> - sme upravili rovnicu a chceme opäť dosadiť využitú substitúciu do rovnice (vo vyskakovacom okne sa vypíšu substitúcie využité v príklade)
+                <br> - chceme nahradiť premennú nejakou konkrétnou hodnotou (napríklad x=1)
+                <br> - sme si vyjadrili v sústave rovníc neznámu a chceme ju dosadiť do ďalšej rovnice (napríklad x=2+z)
+                </div>
+          </div>
+
+          <div class="row"><u>Vyjadri korene</u></div>
+            <div class="row">
+            <div class="col">
+                Operácia vyjadri korene vypočíta korene z rovnice. Rovnica musí byť upravená v súčinovom tvare, aby operácia fungovala.
+                </div>
+          </div>
+
+          <div class="row"><u>Vydeliť alebo vynásobiť rovnicu</u></div>
+            <div class="row">
+            <div class="col">
+                Táto operácia vydelí/vynásobí rovnicu číslicou, ktoré dostane. Pri tejto operácii nie je potrebné klikať na členy rovnice.
+                <br>Vyskakovacie okno obsahuje dva vstupy:
+                <li> Do prvého okna napíšete číslo rovnice, ktoré chcete vydeliť (v prípade sústavy rovníc), pokiaľ rovnica je len jedna, pole je možné nechať prázdne </li>
+                <li>Do druhého okna napíšete celé číslo, ktorým chcete rovnicu vydeliť/vynásobiť.</li>
+                </div>
+          </div>
+
+          <div class="row">
+            <br>
+            <br>
+        </div>
+        </div>
+        <div class="unique-sidenav">
+            <br><br><br><br><br><br>
+          <nav class="navbar" id="side_nav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#">Návod</a></li>
+              <li class="nav-item"><a class="nav-link" href="#vseobecne">Všeobecné</a></li>
+              <li class="nav-item"><a class="nav-link" href="#ulohy">Úlohy</a></li>
+              <li class="nav-item"><a class="nav-link" href="#ihrisko">Ihrisko</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pomocne_operacie">Pomocné operácie</a></li>
+
+            </ul>
+          </nav>
+          <div class="row">
+            <br>
+            <br>
+        </div>
+        </div>
+      </div>
+      <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"></script>
+    </main>
+    <footer class="indexn">
+      <div class="footer1">Túto aplikáciu vytvorila Nina Klačková ako bakalársku prácu v roku 2024</div>
+      <div class="footer2">Fakulta matematiky, fyziky a informatiky, UK</div>
+      <div class="footer1">Email: klackova7@uniba.sk</div>
+    </footer>
+  </body>
+</html>

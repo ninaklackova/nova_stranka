@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="sk">
+  <head>
+    <meta name="description" content="Moja stránka o bakalárskej práci" />
+    <meta name="keywords" content="bc, bakalárska práca, webová aplikácia, matematika, riešenie úloh" />
+    <meta name="author" content="Nina Klačková" />
+    <meta charset="utf-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet"><link type="image/x-icon" href="images/maths.ico" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="{{ url_for('static', filename='/images/maths.ico') }}" rel="shortcut icon" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/general.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/calculator.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/exercise.css') }}">
+
+
+    <title>Úlohy</title>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand me-lg-5 me-0" href="index.html">
+                        <img src="{{ url_for('static', filename='/images/maths.jpeg') }}" class="logo-image img-fluid" alt="math logo">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Domov</a></li>
+                            <li class="nav-item"><a class="nav-link" href="teoria.html">Teória</a></li>
+                            <li class="nav-item"><a class="nav-link" href="navod.html">Návod</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="ulohy.html">Úlohy</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ihrisko.html">Ihrisko</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+    </nav>
+
+
+<main class="">
+  <br>
+
+
+
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="row" id="exercise_title_row">
+
+                    <div class="col-3">
+                        <button class="btn btn-primary bi bi-arrow-90deg-left"" title="vrátiť späť" id="undo_button"></button>
+                        <button class="btn btn-primary bi bi-trash" title="zmazať všetko" id="clear_button"></button>
+                        <button class="btn btn-primary bi bi-calculator" title="kalkulačka" id="calculator"></button>
+                        <div id="popupCalculator" class="popup">
+                            <div class="popup-content">
+                                <!-- Obsah kalkulačky bude nahraný sem -->
+                                <div class="container">
+                                    <table>
+                                        <tr class="resultCalc">
+                                            <td colspan="2"><input type='text' id='resultCalc' class ='screen'></td>
+                                            <td>
+                                                <input type='button' value = 'C' onclick="clearScreen()" class="clear"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="keys">
+                                        <input type="button" value="7" class="button" onClick="display('7')">
+                                        <input type="button" value="8" class="button " onClick="display('8')">
+                                        <input type="button" value="9" class="button" onClick="display('9')">
+                                        <input type="button" value="/" class="operator" onClick="display('/')">
+                                        <input type="button" value="4" class="button" onClick="display('4')">
+                                        <input type="button" value="5" class="button" onClick="display('5')">
+                                        <input type="button" value="6" class="button" onClick="display('6')">
+                                        <input type="button" value="*" class="operator" onClick="display('*')">
+                                        <input type="button" value="1" class="button" onClick="display('1')">
+                                        <input type="button" value="2" class="button" onClick="display('2')">
+                                        <input type="button" value="3" class="button" onClick="display('3')">
+                                        <input type="button" value="-" class="operator" onClick="display('-')">
+                                        <input type="button" value="0" class="button" onClick="display('0')">
+                                        <input type="button" value="." class="button" onClick="display('.')">
+                                        <input type="button" value= "=" class="button equal-sign" onClick="solve()">
+                                        <input type="button" value="+" class="operator" onClick="display('+')">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" id="answer_button" class="btn btn-action btn-block">Odpoveď </button>
+                            <div id="answer_popup" style="display: none;">
+                                <div id="popupHeader2" class="popup-header2">
+                                    <span>Odpoveď:</span>
+                                    <button onclick="closeAnswerPopup()">x</button>
+                                </div>
+                                <div id="popupInputs"></div>
+                                <button type="button" id="popupConfirmButton" class="btn btn-primary">Potvrdiť</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-5 text-center" id="exercise_title">
+                        <!--                        číslo úlohy-->
+                        number of exercise
+                    </div>
+
+                    <div class="col-1">
+                        <button class="btn btn-primary bi bi-lightbulb" type="button" title="zobraz riešenie" data-bs-toggle="modal" data-bs-target="#carouselPopup" id="exercise_hint"></button>
+                     </div>
+
+                    <div class="col-1">
+                        <button class="btn btn-primary bi bi-arrow-left" title="predchádzajúca úloha" id="prevButton" disabled"></button>
+                    </div>
+
+                    <div class="col-1">
+                        <button class="btn btn-primary bi bi-arrow-right" title="nasledujúca úloha" id="nextButton"></button>
+                    </div>
+
+                    <div class="col-1">
+                      <button class="btn btn-primary bi bi-list" type="button" title="zoznam úloh" id="openModalExerciseButton" data-bs-content="Obsah okna s textom"></button>
+                      <div id="modalExercise" class="modal-no-backdrop" style="display: none;">
+                        <div class="modal_exercise-content">
+                            <div class="modal_exercise-header">
+                                <span class="close-button" id="closeModalExerciseButton">&times;</span>
+                                <h2>Príklady</h2>
+                            </div>
+                            <div id="exerciseButtons">
+                                <!-- Tlačidlá pre jednotlivé príklady budú generované dynamicky -->
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="row" id="text">
+                </div>
+
+                <div class="row justify-content-center" id="exercise_text">
+                    <!--                    text zadania-->
+                    exercise assignment
+                </div>
+                <div class="row justify-content-center">
+                    <textarea id="exercise-input" placeholder="Vlastné zadanie" rows="3" style="display: none;"></textarea>
+                    <div class="row justify-content-center">
+                        <button type="button" id="submit-exercise" style="display: none;" class="btn btn-primary large-button">Potvrdiť</button>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center" id="exercise_place">
+                    place for solving math
+
+                </div>
+
+                <br><br>
+            </div>
+
+            <div class="col-lg-3 col-md-12 bg-light" id="steps_col">
+                <div class="row" id="exercise_help_row">
+                    <div class="col-6">
+                      <!-- <button class="btn btn-primary bi bi-arrow-return-right" title="nasledujúca úloha" id="rightt_button"></button> -->
+                    </div>
+                    <br>
+
+                    <div id="buttons"></div>
+                    <div id="customPopup" class="custom-popup" style="display: none;">
+                        <div id="popupHeader" class="popup-header">
+                            <span>Zadávacie okno:</span>
+                            <button onclick="closePopup()">X</button>
+                        </div>
+                        <div id="customFunctionMessage">
+
+                        Kliknite na tlačidlá, ktoré chcete vybrať, vypíšte pole a potom stlačte "Potvrdiť".
+                        </div>
+                        <div id="selectedButtons"></div>
+
+                        <div class="popup-controls">
+                            <button type="button" id="closeButton" class="btn btn-primary">Potvrdiť</button>
+                            <input id="popupTextArea" style="resize: none; width:auto"></input>
+                        </div>
+                    </div>
+
+                    <!-- popup na cele rovnice s dvomi inputmi -->
+                    <div id="customPopupEq" class="custom-popup" style="display: none;">
+                        <div id="popupHeaderEq" class="popup-header">
+                            <span>Zadávacie okno:</span>
+                            <button onclick="closePopupEq()">X</button>
+                        </div>
+                        <div id="customFunctionMessageEq">
+                            Kliknite na tlačidlá, ktoré chcete vybrať, vypíšte pole a potom stlačte "Potvrdiť".
+                        </div>
+                        <div id="selectedButtons"></div>
+
+                        <div class="popup-controls">
+                            <button type="button" id="closeButtonEq" class="btn btn-primary">Potvrdiť</button>
+                            <input id="popupInput1" style="width: auto;" placeholder="Číslo rovnice">
+                            <input id="popupInput2" style="width: auto;" placeholder="Deliteľ/násobok">
+                        </div>
+                    </div>
+                    <div class="row" id="text">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="row justify-content-center">
+
+                        <div class="row" id="text">
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="carouselPopup" tabindex="1" aria-labelledby="carouselPopupLabel" aria-hidden="true" data-bs-backdrop="true">
+        <div class="modal-dialog modal-lg modal-no-backdrop">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carouselPopupLabel">Riešenie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Carousel -->
+                    <div id="carouselExampleIndicators" class="carousel slide" >
+                        <div class="carousel-inner" id="carousel-inner">
+                            <!-- Carousel items will be inserted here dynamically -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                   </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://unpkg.com/mathjs@12.4.2/lib/browser/math.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/calculator.js') }}"> </script>
+    <script src="{{ url_for('static', filename='/js/general.js') }}"> </script>
+    <script src="{{ url_for('static', filename='/js/exerciseload.js') }}"> </script>
+    <script src="{{ url_for('static', filename='/js/exercise.js') }}"> </script>
+
+</main>
+
+    <footer class="indexn">
+      <div class="footer1">Túto aplikáciu vytvorila Nina Klačková ako bakalársku prácu</div>
+      <div class="footer2">Fakulta matematiky, fyziky a informatiky, UK</div>
+      <div class="footer1">Email: klackova7@uniba.sk</div>
+    </footer>
+</body>
+</html>

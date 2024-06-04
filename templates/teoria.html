@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta name="description" content="Moja stránka o bakalárskej práci" />
+    <meta name="keywords" content="bc, bakalárska práca, webová aplikácia, matematika, riešenie úloh" />
+    <meta name="author" content="Nina Klačková" />
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link type="image/x-icon" href="{{ url_for('static', filename='/images/maths.ico') }}" rel="shortcut icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap-icons-1.11.3/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/general.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/theoryInstruction.css') }}">
+    <title>Teória</title>
+
+  </head>
+  <body>
+    <script src="{{ url_for('static', filename='/js/bootstrap.bundle.min.js') }}"></script>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand me-lg-5 me-0" href="index.html">
+          <img src="{{ url_for('static', filename='/images/maths.jpeg') }}" class="logo-image img-fluid" alt="math logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-lg-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Domov</a></li>
+            <li class="nav-item"><a class="nav-link active" href="teoria.html">Teória</a></li>
+            <li class="nav-item"><a class="nav-link" href="navod.html">Návod</a></li>
+            <li class="nav-item"><a class="nav-link" href="ulohy.html">Úlohy</a></li>
+            <li class="nav-item"><a class="nav-link" href="ihrisko.html">Ihrisko</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="unique-container">
+        <div class="unique-content">
+          <div class="row" id="algebra"><h2><b>Algebra</b></h2></div>
+          <div class="row">
+            <div class="col">
+                Algebra je časť matematiky, ktorá umožňuje modelovať reálne situácie, analyzovať dáta, optimalizovať
+                procesy pri riešení rôznych problémov vo vede a technike i v každodennom živote. Grafické znázornenia rovníc slúžia na opis a predikciu situácií v živote, napríklad kvadratické rovnice sa využívajú na dizajn a zaoblenie pri šošovkách ďalekohľadu alebo pri výpočte zaoblenia letu pri hode loptou.
+                <br><br>V matematike nepočítame iba s určitými číslami, niekedy môžeme označovať čísla aj písmenami. Robíme
+                to preto, aby sme zachytili tým istým zápisom všetky možné výpočty, ktoré sa uskutočňujú tými istými
+                počtovými výkonmi.
+            </div>
+          </div>
+
+
+        <div class="row" id="pojmy"><br><br><b><u>Niektoré algebraické pojmy:</u></b></div>
+        <div class="col" id="koncepty">
+            <ul>
+                <li><b>Algebraický výraz: </b>Zápis, skladajúci sa z čísel a písmen, ktoré sú pospájané znakmi operácií: sčítanie, odčítanie, násobenie, delenie, umocnenie, odmocnenie.</li>
+                <li><b>Záporné číslo: </b>Je menšie ako nula. Pred takéto číslo píšeme znamienko „mínus“ (-).</li>
+                <li><b>Zlomok: </b>Číslo vyjadrené ako pomer celého a prirodzeného čísla, napríklad 1/2 alebo 3/4. </li>
+                <li><b>Mocnina: </b>Predstavuje opakované násobenie čísla samým sebou, napríklad 2<sup>3</sup>=8, kde 2 je základ a 3 je exponent mocniny.</li>
+                <li><b>Odmocnina: </b>Operácia opačná k mocnine, napríklad &radic;16=4.
+                <li><b>Poradie operácií: </b>Pravidlá určujúce, v akom poradí vykonávať matematické operácie: zátvorky, mocniny a odmocniny, násobenie a delenie, sčítanie a odčítanie. </li>
+                <li><b>Lineárna rovnica: </b>Je rovnica prvého stupňa, ktorá má tvar <i>a</i>x+<i>b</i>=0.</li>
+                <li><b>Kvadratická rovnica: </b>Je rovnica druhého stupňa, ktorá má tvar <i>a</i>x<sup>2</sup>+<i>b</i>x+c=0.</li>
+                <li><b>Sústava rovníc: </b>Pozostáva z viacerých rovníc, ktoré majú spoločné riešenie a riešia sa súčasne.</li>
+
+            </ul>
+        </div>
+
+          <hr>
+          <div class="row" id="realne_cisla"><h3>Základné algebraické vlastnosti</h3></div>
+          <div class="row">
+            <div class="col">
+                <b>&reals;</b> je obor reálnych čísel (množina všetkých reálnych čísel).
+            <br>Nech a, b, c sú ľubovoľné reálne čísla. Potom  operácie sčítania a násobenia sú uzavreté v <b>&reals;</b>,<br> t. j. a + b ∈ <b>&reals;</b>, a · b ∈ <b>&reals;</b>. Potom:
+            <ul>
+                <li>platí komutatívnosť sčítania a násobenia: a + b = b + a ; a · b = b · a </li>
+                <li>platí asociatívnosť sčítania a násobenia: a + (b + c) = (a + b) + c ; a · (b · c) = (a · b) · c </li>
+                <li>platí distributívnosť násobenia vzhľadom k sčítaniu:  a · (b + c) = a · b + a · c </li>
+            </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="zjednodusenie"><h3>Zjednodušenie výrazu</h3></div>
+          <div class="row">
+            <div class="col">Je súbor úprav, ktorých cieľom je získať ekvivaletný, ale menej komplikovaný výraz, ktorý je ľahší na spracovanie.
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="vynatie"><h3>Vyňatie pred zátvorku</h3></div>
+          <div class="row">
+            <div class="col">Metóda, ktorá sa používa na zjednodušenie výrazu. Spoločný faktor nájdený medzi členmi výrazu sa
+                následne „vyberie" pred zátvorku. Vyňatie pred zátvorku sprehľadní a zjednoduší proces riešenia výrazu. <br>
+                Majme výraz : 2x + 4, kde spoločný faktor je 2, pretože oba členy dokážeme deliť číslom 2. Po vyňatí pred zátvorku dostaneme :
+                <p style="text-align: center;"><b>2x + 4 = 2 ( x + 2 ).</b></p>
+              </div>
+          </div>
+          <hr>
+          <div class="row" id="rozdelenieplus"><h3>Rozloženie na súčet</h3></div>
+          <div class="row">
+            <div class="col">Je matematická úprava, pri ktorej nahradíme člen výrazu jeho súčtom.
+                <br> Majme výraz : 10x. Po rozložení na súčet môžeme napríklad dostať:
+                <p style="text-align: center;"><b>10x = 8x + 2x.</b></p>
+
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="rozdeleniekrat"><h3>Rozloženie na súčin</h3></div>
+          <div class="row">
+            <div class="col">Vyjadrenie mnohočlena alebo čísla ako súčin niektorých svojich deliteľov. <br>
+                Pri aplikovaní metódy rozklad na súčin môžeme rozložiť člen napríklad na :
+                <p style="text-align: center;"><b>8x = 2 * 4x.</b></p>
+
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="substitucia"><h3>Substitúcia</h3></div>
+          <div class="row">
+            <div class="col">Nahradenia jedného výrazu iným výrazom s cieľom zjednodušiť alebo riešiť daný matematický problém. <br>
+                Majme rovnicu: (y+2)<sup>2</sup> - 5 (y+2) + 6 = 0. Pre zjedušenie výpočtu využijeme substitúciu a =(y+2). Pričom sa pôvodný výraz zmení na:
+                 <p style="text-align: center;"><b>a<sup>2</sup> - 5a + 6 = 0.</b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="zjednodusenie_na_mocniny"><h3>Zjednodušenie na mocniny</h3></div>
+          <div class="row">
+            <div class="col">Zjednodušenie na mocniny je proces, pri ktorom sa matematický výraz alebo rovnica zmení tak, aby bol vyjadrený pomocou mocnín, a to čo najjednoduchšie. Zjednodušenie na mocniny je užitočné pri práci s exponenciálnymi rovnicami.
+                <br> Majme výraz: 121x<sup>2</sup>. Po zjednodušení na mocniny dostaneme:
+                 <p style="text-align: center;"><b>11<sup>2</sup>x<sup>2</sup>.</b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="vzorce"><h3>Ekvivalentné úpravy</h3></div>
+          <div class="row">
+            <div class="col">Pri úprave nám často môžu pomôcť aj vzorce, ktoré umožňujú zapísať istý typ výrazu v tvare súčinu.<br> Pre ľubovoľné reálne čísla <i>a</i> a <i>b</i> platí:
+                <ul></ul>
+                <li> a<sup>2</sup> - b<sup>2</sup> = (a - b)(a + b)</li>
+                <li> a<sup>3</sup> - b<sup>3</sup> = (a - b)(a<sup>2</sup> + ab + b<sup>2</sup>)</li>
+                <li> a<sup>3</sup> + b<sup>3</sup> = (a + b)(a<sup>2</sup> - ab + b<sup>2</sup>)</li>
+                <li> a<sup>2</sup> ±  2ab + b<sup>2</sup> = (a ± b)<sup>2</sup></li>
+
+                <br>Ďalej k ekvivalentným úpravám pri riešení rovníc patrí:<ul></ul>
+                <li>Pripočítanie akéhokoľvek výrazu k obom stranám rovnice</li>
+                <li>Násobenie oboch strán rovnice nenulovým výrazom</li>
+                <li>Vymenenie pravej a ľavej strany rovnice</li>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="zjednodusenie_na_mocniny"><h3>Rozdelenie na súčin (úprava na súčin)</h3></div>
+          <div class="row">
+            <div class="col">Kvadratická rovnica má viacero spôsobov riešenia a jedným z nich je často používaný rozklad na súčin alebo doplnenie
+              na štvorcový tvar, ktoré úzko súvisia s Vietovými vzorcami a diskriminantom kvadratickej rovnice.
+
+            <p>Kvadratickú rovnicu môžeme vyjadriť ako:</p>
+            <p style="text-align: center;">ax<sup>2</sup> + bx + c = a(x - x<sub>1</sub>)(x - x<sub>2</sub>)</p>
+            <p>kde x<sub>1</sub> a x<sub>2</sub> sú korene rovnice. Tento postup využíva Vietove vzorce, ktoré hovoria o tom, ak je daná všeobecná kvadratická rovnica, potom platí:</p>
+            <p style="text-align: center;">x<sub>1</sub> + x<sub>2</sub> = -<sup>b</sup>&frasl;<sub>a</sub></p>
+            <p style="text-align: center;">x<sub>1</sub>x<sub>2</sub> = <sup>c</sup>&frasl;<sub>a</sub></p>
+            <br> Majme kvadratickú rovnicu x<sup>2</sup> + 5x + 4 = 0. Potom túto rovnicu využitím rozdelenia na súčin vieme zapísať aj ako:
+            <p style="text-align: center;"><b>(x + 1)*(x+4) = 0.</b>
+              <p>Aby sme našli korene tejto rovnice, musíme nájsť hodnoty x, pre ktoré je výraz rovný nule. Preto nastavíme každý člen rovnice na nulu a riešime pre x:</p>
+              <p>1. Nastavíme prvý člen na nulu: x + 1 = 0. Riešime pre x-><b> x = -1</b>
+              <p>2. Nastavíme druhý člen na nulu: x + 4 = 0. Riešime pre x-><b>x = -4</b>
+              <p>Takže korene rovnice sú: <b>x = -1</b> a <b>x = -4</b></p>
+            <p>Pre zachovanie tvaru rovnice sme v tejto aplikácii zvolili možnosť riešenia kvadratickej rovnice iba rozdelením na súčin.</p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+            <br>
+            <br>
+        </div>
+        </div>
+        <div class="unique-sidenav">
+            <br><br><br><br>
+          <nav class="navbar" id="side_nav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#">Algebra</a></li>
+              <li class="nav-item"><a class="nav-link" href="#realne_cisla">Základné algebraické vlastnosti</a></li>
+              <li class="nav-item"><a class="nav-link" href="#zjednodusenie">Zjednodušenie výrazu</a></li>
+              <li class="nav-item"><a class="nav-link" href="#vynatie">Vyňatie pred zátvorku</a></li>
+              <li class="nav-item"><a class="nav-link" href="#rozdelenieplus">Rozloženie na súčet</a></li>
+              <li class="nav-item"><a class="nav-link" href="#rozdeleniekrat">Rozloženie na súčin</a></li>
+              <li class="nav-item"><a class="nav-link" href="#substitucia">Substitúcia</a></li>
+              <li class="nav-item"><a class="nav-link" href="#zjednodusenie_na_mocniny">Zjednodušenie na mocniny</a></li>
+              <li class="nav-item"><a class="nav-link" href="#vzorce">Ekvivalentné úpravy</a></li>
+
+            </ul>
+          </nav>
+          <div class="row">
+            <br>
+            <br>
+        </div>
+        </div>
+      </div>
+
+    </main>
+    <footer class="indexn">
+      <div class="footer1">Túto aplikáciu vytvorila Nina Klačková ako bakalársku prácu v roku 2024</div>
+      <div class="footer2">Fakulta matematiky, fyziky a informatiky, UK</div>
+      <div class="footer1">Email: klackova7@uniba.sk</div>
+    </footer>
+  </body>
+</html>
