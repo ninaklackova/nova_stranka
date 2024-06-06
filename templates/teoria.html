@@ -45,7 +45,7 @@
           <div class="row">
             <div class="col">
                 Algebra je časť matematiky, ktorá umožňuje modelovať reálne situácie, analyzovať dáta, optimalizovať
-                procesy pri riešení rôznych problémov vo vede a technike i v každodennom živote. Grafické znázornenia rovníc slúžia na opis a predikciu situácií v živote, napríklad kvadratické rovnice sa využívajú na dizajn a zaoblenie pri šošovkách ďalekohľadu alebo pri výpočte zaoblenia letu pri hode loptou.
+                procesy pri riešení rôznych problémov vo vede a technike i v každodennom živote. Grafické znázornenia rovníc slúžia na opis a predikciu situácií v živote, napríklad kvadratické rovnice sa využívajú na dizajn a zaoblenie pri šošovkách ďalekohľadov alebo pri výpočte zakrivenia letu pri hode loptou.
                 <br><br>V matematike nepočítame iba s určitými číslami, niekedy môžeme označovať čísla aj písmenami. Robíme
                 to preto, aby sme zachytili tým istým zápisom všetky možné výpočty, ktoré sa uskutočňujú tými istými
                 počtovými výkonmi.
@@ -60,10 +60,10 @@
                 <li><b>Záporné číslo: </b>Je menšie ako nula. Pred takéto číslo píšeme znamienko „mínus“ (-).</li>
                 <li><b>Zlomok: </b>Číslo vyjadrené ako pomer celého a prirodzeného čísla, napríklad 1/2 alebo 3/4. </li>
                 <li><b>Mocnina: </b>Predstavuje opakované násobenie čísla samým sebou, napríklad 2<sup>3</sup>=8, kde 2 je základ a 3 je exponent mocniny.</li>
-                <li><b>Odmocnina: </b>Operácia opačná k mocnine, napríklad &radic;16=4.
+                <li><b>Odmocnina: </b>Operácia obrátená k mocnine, napríklad &radic;16=4.
                 <li><b>Poradie operácií: </b>Pravidlá určujúce, v akom poradí vykonávať matematické operácie: zátvorky, mocniny a odmocniny, násobenie a delenie, sčítanie a odčítanie. </li>
                 <li><b>Lineárna rovnica: </b>Je rovnica prvého stupňa, ktorá má tvar <i>a</i>x+<i>b</i>=0.</li>
-                <li><b>Kvadratická rovnica: </b>Je rovnica druhého stupňa, ktorá má tvar <i>a</i>x<sup>2</sup>+<i>b</i>x+c=0.</li>
+                <li><b>Kvadratická rovnica: </b>Je rovnica druhého stupňa, ktorá má tvar <i>a</i>x<sup>2</sup>+<i>b</i>x+c=0, kde <i>a</i> je rôzne od nuly.</li>
                 <li><b>Sústava rovníc: </b>Pozostáva z viacerých rovníc, ktoré majú spoločné riešenie a riešia sa súčasne.</li>
 
             </ul>
@@ -76,9 +76,9 @@
                 <b>&reals;</b> je obor reálnych čísel (množina všetkých reálnych čísel).
             <br>Nech a, b, c sú ľubovoľné reálne čísla. Potom  operácie sčítania a násobenia sú uzavreté v <b>&reals;</b>,<br> t. j. a + b ∈ <b>&reals;</b>, a · b ∈ <b>&reals;</b>. Potom:
             <ul>
-                <li>platí komutatívnosť sčítania a násobenia: a + b = b + a ; a · b = b · a </li>
-                <li>platí asociatívnosť sčítania a násobenia: a + (b + c) = (a + b) + c ; a · (b · c) = (a · b) · c </li>
-                <li>platí distributívnosť násobenia vzhľadom k sčítaniu:  a · (b + c) = a · b + a · c </li>
+                <li>platí <i>komutatívnosť</i> sčítania a násobenia: a + b = b + a ; a · b = b · a </li>
+                <li>platí <i>asociatívnosť</i> sčítania a násobenia: a + (b + c) = (a + b) + c ; a · (b · c) = (a · b) · c </li>
+                <li>platí <i>distributívnosť</i> násobenia vzhľadom k sčítaniu:  a · (b + c) = a · b + a · c </li>
             </ul>
             </div>
           </div>
@@ -92,7 +92,7 @@
           <div class="row" id="vynatie"><h3>Vyňatie pred zátvorku</h3></div>
           <div class="row">
             <div class="col">Metóda, ktorá sa používa na zjednodušenie výrazu. Spoločný faktor nájdený medzi členmi výrazu sa
-                následne „vyberie" pred zátvorku. Vyňatie pred zátvorku sprehľadní a zjednoduší proces riešenia výrazu. <br>
+                následne „vyberie" pred zátvorku. Vyňatie pred zátvorku sprehľadní a zjednoduší proces riešenia výrazu. (Ide o aplikáciu distributívnosti násobenia vzhľadom na sčitovanie.) <br>
                 Majme výraz : 2x + 4, kde spoločný faktor je 2, pretože oba členy dokážeme deliť číslom 2. Po vyňatí pred zátvorku dostaneme :
                 <p style="text-align: center;"><b>2x + 4 = 2 ( x + 2 ).</b></p>
               </div>
@@ -150,8 +150,7 @@
           <hr>
           <div class="row" id="zjednodusenie_na_mocniny"><h3>Rozdelenie na súčin (úprava na súčin)</h3></div>
           <div class="row">
-            <div class="col">Kvadratická rovnica má viacero spôsobov riešenia a jedným z nich je často používaný rozklad na súčin alebo doplnenie
-              na štvorcový tvar, ktoré úzko súvisia s Vietovými vzorcami a diskriminantom kvadratickej rovnice.
+            <div class="col">Kvadratická rovnica má viacero spôsobov riešenia a jedným z nich je často používaný rozklad na súčin alebo rozklad na druhú mocninu dvojčlena, ktoré úzko súvisia s Vietovými vzorcami a diskriminantom kvadratickej rovnice.
 
             <p>Kvadratickú rovnicu môžeme vyjadriť ako:</p>
             <p style="text-align: center;">ax<sup>2</sup> + bx + c = a(x - x<sub>1</sub>)(x - x<sub>2</sub>)</p>
@@ -160,14 +159,49 @@
             <p style="text-align: center;">x<sub>1</sub>x<sub>2</sub> = <sup>c</sup>&frasl;<sub>a</sub></p>
             <br> Majme kvadratickú rovnicu x<sup>2</sup> + 5x + 4 = 0. Potom túto rovnicu využitím rozdelenia na súčin vieme zapísať aj ako:
             <p style="text-align: center;"><b>(x + 1)*(x+4) = 0.</b>
-              <p>Aby sme našli korene tejto rovnice, musíme nájsť hodnoty x, pre ktoré je výraz rovný nule. Preto nastavíme každý člen rovnice na nulu a riešime pre x:</p>
-              <p>1. Nastavíme prvý člen na nulu: x + 1 = 0. Riešime pre x-><b> x = -1</b>
-              <p>2. Nastavíme druhý člen na nulu: x + 4 = 0. Riešime pre x-><b>x = -4</b>
+              <p>Aby sme našli korene tejto rovnice, musíme nájsť hodnoty x, pre ktoré je výraz rovný nule. Pre všetky reálne u, v platí, že u*v = 0 vtedy a len vtedy, keď u = 0 alebo v = 0. Potom rovnicu riešime pre x tak, že:</p>
+              <p>1. Nastavíme prvú zátvorku na nulu: x + 1 = 0. Riešime pre x-><b> x = -1</b>
+              <p>2. Nastavíme druhú zátvorku na nulu: x + 4 = 0. Riešime pre x-><b>x = -4</b>
               <p>Takže korene rovnice sú: <b>x = -1</b> a <b>x = -4</b></p>
+              <p>(Vietove vzorce možno použiť iba vtedy, ak kvadratická rovnica má korene.)</p>
             <p>Pre zachovanie tvaru rovnice sme v tejto aplikácii zvolili možnosť riešenia kvadratickej rovnice iba rozdelením na súčin.</p>
             </div>
           </div>
           <hr>
+          <div class="row" id="vynasobenie" style="text-align: center;"><h3>Vynásobiť rovnicu</h3></div>
+          <div class="row">
+            <div class="col">Vynásobenie každého člena rovnice tým istým číslom. Tento proces nezmení riešenie, iba môže pomôcť pri zjednodušovaní alebo pri odstraňovaní zlomkov.
+                <br> Majme rovnicu: 10x + 15 = 0. Po vynásobení rovnice číslom 5 dostaneme:
+                 <p style="text-align: center;"><b>50x + 75 = 0.</b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="vydelenie" style="text-align: center;"><h3>Vydeliť rovnicu</h3></div>
+          <div class="row">
+            <div class="col">Úprava, pri ktorej každý člen rovnice je delený tým istým
+              nenulovým číslom. Tento proces nezmení riešenie rovnice, ale môže zjednodušiť jej výpočet.
+                <br> Majme rovnicu: 70x<sup>2</sup> + 21x - 14 = 0. Po vydelení rovnice číslom 7 dostaneme:
+                 <p style="text-align: center;"><b>10x<sup>2</sup> + 7x - 2 = 0.</b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="presunutie" style="text-align: center;"><h3>Presunutie člena na druhú stranu rovnice</h3></div>
+          <div class="row">
+            <div class="col">Proces, kedy jeden člen rovnice je premiestnený z jednej strany rovnice na druhú stranu, pričom sa zmení jeho znamienko. Táto operácia je užitočná na izolovanie premenných alebo zjednodušenie rovnice.
+                <br> Majme rovnicu: 70x<sup>2</sup> + 21x = 14. Po presunutí člena na pravej strane rovnice dostaneme:
+                 <p style="text-align: center;"><b>70x<sup>2</sup> + 21x - 14 = 0.</b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row" id="umocnenie" style="text-align: center;"><h3>Umocnenie celej rovnice</h3></div>
+          <div class="row">
+            <div class="col">Obe strany rovnice sú umocnené rovnakým exponentom (v tomto prípade 2). Pri tejto úprave je dôležité vykonať kontrolu, či riešenia spĺňajú pôvodnú rovnicu, pretože môžu vzniknúť falošné korene
+                <br> Majme rovnicu: 7x + 2 = 2. Po umocnení celej rovnice mocninou čísla 2 dostaneme:
+                 <p style="text-align: center;"><b>(70x + 2)<sup>2</sup> = 4.</b></p>
+            </div>
+          </div>
+          <hr>
+
 
           <div class="row">
             <br>
@@ -187,6 +221,9 @@
               <li class="nav-item"><a class="nav-link" href="#substitucia">Substitúcia</a></li>
               <li class="nav-item"><a class="nav-link" href="#zjednodusenie_na_mocniny">Zjednodušenie na mocniny</a></li>
               <li class="nav-item"><a class="nav-link" href="#vzorce">Ekvivalentné úpravy</a></li>
+              <li class="nav-item"><a class="nav-link" href="#vynasobenie">Vynásobenie rovnice</a></li>
+              <li class="nav-item"><a class="nav-link" href="#vydelenie">Vydelenie rovnice</a></li>
+              <li class="nav-item"><a class="nav-link" href="#presunutie">Presunutie člena</a></li>
 
             </ul>
           </nav>
